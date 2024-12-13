@@ -8,8 +8,24 @@ fn main() {
     let data = std::fs::read_to_string(path).expect(format!("Failed to read file for day: {}", DAY).as_str());
     let lines = data.lines().collect();
 
-    println!("Part 1: {}", day.part1(&lines));
-    println!("Part 2: {}", day.part2(&lines));
+    run(&day, &lines, false);
+    run(&day, &lines, true);
+}
+
+fn run(day: &Box<dyn Day>, lines: &Vec<&str>, part2: bool) {
+    let before = std::time::Instant::now();
+    let result = if part2 { day.part2(lines) } else { day.part1(lines) };
+    let duration = before.elapsed();
+
+    if part2 {
+        println!("-- Part 2 --");
+    } else {
+        println!("-- Part 1 --");
+    }
+
+    println!("  Result: {}", result);
+    println!("  Took: {:.2?}", duration);
+    println!();
 }
 
 fn get_day(number: i32) -> Box<dyn Day> {
