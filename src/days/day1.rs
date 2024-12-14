@@ -3,7 +3,7 @@ use crate::Day;
 pub struct Day1 {}
 
 impl Day for Day1 {
-    fn part1(&self, lines: &Vec<&str>) -> i64 {
+    fn part1(&self, lines: &[&str]) -> i64 {
         let first = get_list(lines, 0);
         let second = get_list(lines, 1);
 
@@ -16,7 +16,7 @@ impl Day for Day1 {
         sum
     }
 
-    fn part2(&self, lines: &Vec<&str>) -> i64 {
+    fn part2(&self, lines: &[&str]) -> i64 {
         let first = get_list(lines, 0);
         let second = get_list(lines, 1);
 
@@ -40,7 +40,7 @@ impl Day for Day1 {
     }
 }
 
-fn get_list(lines: &Vec<&str>, index: i32) -> Vec<i32> {
+fn get_list(lines: &[&str], index: i32) -> Vec<i32> {
     let mut list = Vec::with_capacity(lines.len());
 
     for line in lines {

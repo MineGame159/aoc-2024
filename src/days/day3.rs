@@ -10,11 +10,11 @@ enum Instruction {
 }
 
 impl Day for Day3 {
-    fn part1(&self, lines: &Vec<&str>) -> i64 {
+    fn part1(&self, lines: &[&str]) -> i64 {
         run(&parse(lines), false)
     }
 
-    fn part2(&self, lines: &Vec<&str>) -> i64 {
+    fn part2(&self, lines: &[&str]) -> i64 {
         run(&parse(lines), true)
     }
 }
@@ -38,7 +38,7 @@ fn run(instructions: &[Instruction], dos_enabled: bool) -> i64 {
     result
 }
 
-fn parse(lines: &Vec<&str>) -> Vec<Instruction> {
+fn parse(lines: &[&str]) -> Vec<Instruction> {
     let pattern = Regex::new(r"do\(\)|don't\(\)|mul\(([0-9]{1,3}),([0-9]{1,3})\)").unwrap();
 
     lines

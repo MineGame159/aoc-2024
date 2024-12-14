@@ -3,11 +3,11 @@ use crate::Day;
 pub struct Day2 {}
 
 impl Day for Day2 {
-    fn part1(&self, lines: &Vec<&str>) -> i64 {
+    fn part1(&self, lines: &[&str]) -> i64 {
         parse(lines).iter().filter(|report| analyze_report(report)).count() as i64
     }
 
-    fn part2(&self, lines: &Vec<&str>) -> i64 {
+    fn part2(&self, lines: &[&str]) -> i64 {
         parse(lines)
             .iter()
             .filter(|report| {
@@ -58,7 +58,7 @@ fn analyze_report(report: &Vec<i32>) -> bool {
     safe >= size && idk.abs() == size
 }
 
-fn parse(lines: &Vec<&str>) -> Vec<Vec<i32>> {
+fn parse(lines: &[&str]) -> Vec<Vec<i32>> {
     lines
         .iter()
         .map(|line| line.split(' ').map(|level| level.parse().unwrap()).collect::<Vec<i32>>())

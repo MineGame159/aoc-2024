@@ -6,13 +6,13 @@ fn main() {
 
     let path = format!("days/day{}.txt", DAY);
     let data = std::fs::read_to_string(path).expect(format!("Failed to read file for day: {}", DAY).as_str());
-    let lines = data.lines().collect();
+    let lines = data.lines().collect::<Vec<&str>>();
 
     run(&day, &lines, false);
     run(&day, &lines, true);
 }
 
-fn run(day: &Box<dyn Day>, lines: &Vec<&str>, part2: bool) {
+fn run(day: &Box<dyn Day>, lines: &[&str], part2: bool) {
     let before = std::time::Instant::now();
     let result = if part2 { day.part2(lines) } else { day.part1(lines) };
     let duration = before.elapsed();
