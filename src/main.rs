@@ -1,7 +1,7 @@
 use aoc::{days, Day};
 
 fn main() {
-    const DAY: i32 = 8;
+    const DAY: i32 = 9;
     let day = get_day(DAY);
 
     let path = format!("days/day{}.txt", DAY);
@@ -38,6 +38,7 @@ fn get_day(number: i32) -> Box<dyn Day> {
         6 => Box::new(days::Day6 {}),
         7 => Box::new(days::Day7 {}),
         8 => Box::new(days::Day8 {}),
+        9 => Box::new(days::Day9 {}),
         _ => panic!("Invalid day number: {}", number),
     }
 }

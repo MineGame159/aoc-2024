@@ -58,7 +58,7 @@ fn place_antinodes_in_line(tiles: &mut Vec<Vec<Tile>>) {
                 let mut x = antenna1.x as isize;
                 let mut y = antenna1.y as isize;
 
-                while (place_antinode(tiles, x, y)) {
+                while place_antinode(tiles, x, y) {
                     x += dir_x;
                     y += dir_y;
                 }
@@ -68,7 +68,7 @@ fn place_antinodes_in_line(tiles: &mut Vec<Vec<Tile>>) {
                 let mut x = antenna2.x as isize;
                 let mut y = antenna2.y as isize;
 
-                while (place_antinode(tiles, x, y)) {
+                while place_antinode(tiles, x, y) {
                     x -= dir_x;
                     y -= dir_y;
                 }
