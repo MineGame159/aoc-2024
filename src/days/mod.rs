@@ -16,3 +16,4 @@ reexport!(day8);
 reexport!(day9);
 reexport!(day10);
 reexport!(day11);
+reexport!(day12);
